@@ -11,7 +11,9 @@ public class RemyScript : MonoBehaviour {
 
 	//Version bool
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.W)) {
+        float y = Input.GetAxis("Vertical");
+        miAnimator.SetFloat("Corriendo", y);
+        if (Input.GetKeyDown(KeyCode.Space)) {
             miAnimator.SetBool("EstaAndando", true);
         } else if (Input.GetKeyDown(KeyCode.S)) {
             miAnimator.SetBool("EstaAndando", false);
@@ -19,5 +21,10 @@ public class RemyScript : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.P)) {
             miAnimator.SetTrigger("Punch");
         }
+        
 	}
+
+    public void ReproducirSonidoPisada() {
+        print("SONIDO DE PISADA");
+    }
 }
