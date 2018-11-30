@@ -30,4 +30,13 @@ public class RemyBlendScript : MonoBehaviour {
             transform.Rotate(0, Input.GetAxis("Horizontal"), 0);
         }
 	}
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Chocable")) {
+            miAnimator.SetTrigger("Golpe");
+        } else if (other.CompareTag("Tropezable")) {
+            miAnimator.SetTrigger("Tropezon");
+        }
+    }
+
 }

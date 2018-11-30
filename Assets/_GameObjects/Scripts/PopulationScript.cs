@@ -13,7 +13,9 @@ public class PopulationScript : MonoBehaviour {
             for (int j=0; j < numItems[i]; j++) {
                 x = Random.Range(-ancho, ancho);
                 z = Random.Range(-largo, largo);
-                Instantiate(prefabs[i], new Vector3(x, 0, z), Quaternion.identity);
+                (Instantiate(prefabs[i], new Vector3(x, 0, z), Quaternion.identity)).transform.Rotate(new Vector3(0,Random.Range(0,360),0));
+
+
             }
         }
     }
